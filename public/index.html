@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<title>SatanTable</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div id="infoSet">
+		<header align="center">
+			<span class="bg-dark text-light font-weight-bold font-italic p-2">Satan</span><span class="bg-primary text-light font-weight-bold  p-2">Table</span>
+		</header>
+		<section>
+			<div class="menu">
+				<a href="/">Home</a>
+				<a href="/api">Database without format</a>
+				<span id="hideshow" class="bg-warning p-2 font-weight-bold text-dark" style="cursor:  pointer;">Show only table</span>
+				
+			</div>
+		</section>
+	</div>
+	<div class="d-flex" id="containerRoots">
+		<div id="root" align="center" class="d-flex justify-content-center"></div>
+	</div>
+	
+	<script type="text/javascript" src="main.js">
+	</script>
+
+	<div id="show" class="font-weight-bold" style="cursor: pointer;">+</div>
+
+	<script type="text/javascript">
+		let hideshow = document.getElementById("hideshow")
+		let show = document.getElementById("show")
+		let infoSet = document.getElementById("infoSet")
+		let html = document.querySelector("html")
+
+		let validate = false;
+
+		show.style.display = "none"
+
+		hideshow.addEventListener("click",()=>{
+			infoSet.animate([{
+				transform:"translate(0%,0%)",
+				opacity:"1"
+			},{
+				transform:"translate(0%, -100%)",
+				opacity:"0"
+			}],{duration:400,iterations:1})
+			setTimeout(()=>{
+				infoSet.style.display = "none"
+			},350)
+			validate = true
+		})
+		show.addEventListener("click",()=>{
+			infoSet.style.display = "block"
+
+			infoSet.animate([{
+				transform:"translate(0%,-100%)",
+				opacity:"0"
+			},{
+				transform:"translate(0%, 0%)",
+				opacity:"1"
+			}],{duration:400,iterations:1})
+
+			show.style.display = "none"
+			validate = false
+		})
+
+		html.addEventListener("mousemove",(e)=>{
+			if (e.clientY < 20 && validate === true){
+				show.style.display = "block"
+			} else {
+				show.style.display = "none"
+			}
+		})
+
+	</script>
+
+	<script type="text/javascript">
+		let boolean = false;
+		root.addEventListener("dblclick",()=>{
+			boolean = !boolean
+			if (boolean === true){
+				root.style.position = "absolute"
+				root.style.top = "50%"; root.style.left = "50%"
+				root.style.margin = "4px auto"
+				root.style.transform = "translate(-50%, -50%)"
+			} else {
+				root.style.position = "relative"
+				root.style.margin = "4px"
+				root.style.transform = "none"
+				root.style.top = "0"
+				root.style.left = "0"
+			}
+		})
+
+
+		table.addEventListener("mouseenter",(e)=>{
+			table.style.background = "#fff"
+		})
+		table.addEventListener("mouseleave",(e)=>{
+			table.style.background = "#fbfbfb"
+		})
+	</script>
+
+</body>
+</html>
