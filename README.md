@@ -1,10 +1,10 @@
 # SatanTable
 
-# npm start and run server
+## npm start and run server
 
 ![alt text](st3.png)
 
-# node app.js
+## node app.js
 
 ![alt text](st.png)
 
