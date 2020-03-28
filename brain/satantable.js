@@ -7,7 +7,7 @@ class SatanTable{
 		this.alma = []
 		this.name = name
 		this.table = {
-			[this.name] : []
+			[this.name] : [] 
 		}
 		const sv = fs.writeFile("./db/"+this.name+".json", JSON.stringify(this.table, null, 2), err =>{
 			if (err) throw err;
