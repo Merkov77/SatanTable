@@ -1,5 +1,5 @@
 {
-  "name": "SatanBase",
+  "name": "SatanTable",
   "version": "1.0.0",
   "description": "A simple app server-client",
   "main": "index.js",
