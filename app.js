@@ -1,8 +1,6 @@
 const  SatanTable  = require("./brain/satantable");
-
 const db = new SatanTable("database")
 
-//The first object "add" should have each key that go to be used in a new "add"
 
 db.add({
 	"Name":"Richard",
